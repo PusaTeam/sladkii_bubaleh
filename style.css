@@ -100,16 +100,18 @@ padding-left: 10px;
 
 .bot_nav
 {
+    padding: 0px;
     display: flex;
     max-width: 1600px;
     justify-content: space-between;
-    align-items: center;
-    height: 70px;
+
+    height: 100px;
 }
 
 .bot_nav>li{
-    align-self: flex-end;
+    align-self: center;
     width: 20%;
+    padding: 0px;
 }
 
 .bot_nav_hot,
@@ -117,13 +119,11 @@ padding-left: 10px;
 .bot_nav_exc,
 .bot_nav_active,
 .bot_nav_cur{
-
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 20px;
-   
+    justify-content: flex-end;
+     align-items: center;    
+     height: 100px;
 }
 
 .bot_nav>li>a{
@@ -606,6 +606,7 @@ box-shadow: 8px 9px 24px 0px rgba(0,0,0,0.4);
 }
 .top_left{
     display: flex;
+    align-items: center;
 }
 .top_right{
     display: flex;
@@ -675,7 +676,7 @@ box-shadow: 8px 9px 24px 0px rgba(0,0,0,0.4);
     line-height: 35px;
     width: 300px;
     padding-left: 5px;
-       border: 2px solid  #FE974D;
+    border: 2px solid  #FE974D;
 }
 
 .mail_field:focus{
@@ -757,10 +758,19 @@ a:hover>img{
     transform: scale(1.2);
     transition: all 0.2s ease;
 }
-.bot_nav>li>a:hover{
-    -webkit-box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #03A4FF, 6px 3px 0px 4px rgba(0,0,0,0); 
-    box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #03A4FF, 6px 3px 0px 4px rgba(0,0,0,0);
-    transition: all 0.2s ease;
+
+.bot_nav>li>a::after{
+    display: block;
+    position: absolute;
+    width: 0px;
+    margin-bottom: -10px;
+	height: 3px; 
+	background-color: rgb(242, 80, 34);
+	content: "";
+	transition: width 0.3s ease-out; 
+}
+.bot_nav>li>a:hover::after{
+    width: 18%;
 }
 .hot_buy_btn:hover{
     background-position: left bottom;
